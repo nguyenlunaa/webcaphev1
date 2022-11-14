@@ -1,0 +1,38 @@
+﻿@model WebBanCaPhe.Models.LoaiSanPham
+
+@{
+    ViewBag.Title = "SuaLoaiSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SuaLoaiSanPham</h2>
+
+
+<form action="~/LoaiSanPham/SuaLoaiSanPham/@Model.MaLoai" method="post">
+    <div class="row">
+        <input type="hidden" class="form-control" id="formrow-taikhoan-input" name="MaLoai" value="@Model.MaLoai" required>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="formrow-password-input">Tên Loại</label>
+                <input type="text" class="form-control" id="formrow-hoten-input" name="TenLoai" value="@Model.TenLoai" required>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="formrow-password-input">Url_friendly</label>
+        <input type="text" class="form-control" id="formrow-hoten-input" name="Url_friendly" value="@Model.Url_friendly" required>
+    </div>
+
+    <div class="form-group">
+        <label for="formrow-firstname-input">Hình Ảnh</label>
+        <textarea type="text" class="form-control" id="formrow-hoten-input" name="HinhAnh" required> @Model.HinhAnh</textarea>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary w-md">Sửa</button>
+    </div>
+</form>
+
+
